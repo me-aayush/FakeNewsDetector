@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .result-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .reliable {
+            background-color: #d5f5e3;
+            color: #27ae60;
+        }
+        .fake {
+            background-color: #fadbd8;
+            color: #e74c3c;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-btn:hover {
+            background: #2980b9;
+        }
+        .confidence {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analysis Result</h1>
+    <div class="result-container">
+        {% if prediction == 1 %}
+            <div class="result reliable">✓ This news appears to be RELIABLE</div>
+        {% else %}
+            <div class="result fake">✗ This news appears to be FAKE</div>
+        {% endif %}
+        <div class="confidence">
+            Note: This is a prediction based on textual analysis only.
+        </div>
+        <a href="/" class="back-btn">Analyze Another News</a>
+    </div>
+</body>
+</html>
